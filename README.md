@@ -1,5 +1,7 @@
 # dream
 
+this is a light weight chat app made using vue and socket.io. made by yuhanna on behalf of Arc foundation 
+
 ## Project setup
 ```
 npm install
