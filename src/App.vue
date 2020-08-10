@@ -1,20 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
+:root {
+  --main-dark-bg-color: #262e35;
+  --sideBar-dark-bg-color: #303841;
+  --navBar-dark-bg-color: #36404a;
+
+  --main-light-bg-color: #ffffff;
+  --sideBar-light-bg-color: #f5f7fb;
+  --navBar-light-bg-color: #ffffff;
+
+  --main-txt-color: #dcdfe5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--main-txt-color);
 }
 
 #nav {
