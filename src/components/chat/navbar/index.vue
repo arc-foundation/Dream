@@ -1,42 +1,32 @@
 <template>
-  <nav class="nav-bar dark">
+  <nav class="nav-bar light">
+    <div class="logo"><img class="pic" src="@/assets/logo.svg" alt /></div>
     <ul class="nav">
-      <div class="logo">
-        <li>
-          <img class="pic" src="@/assets/logo.svg" alt />
-        </li>
-      </div>
-      <div class="nav-links">
-        <li class="nav-link">
-          <i class="fas fa-user-alt fa-lg"></i>
-        </li>
-        <li class="nav-link">
-          <i class="far fa-comment-alt fa-lg"></i>
-        </li>
-        <li class="nav-link">
-          <i class="fas fa-users fa-lg"></i>
-        </li>
-        <li class="nav-link">
-          <i class="fas fa-address-book fa-lg"></i>
-        </li>
-        <li class="nav-link">
-          <i class="fas fa-cog fa-lg"></i>
-        </li>
-      </div>
-      <div class="mode" @click="setTheme()">
-        <li>
-          <i v-if="dark" class="fas fa-moon fa-lg"></i>
-          <i v-else class="fas fa-sun fa-lg"></i>
-        </li>
-      </div>
-      <div class="profile">
-        <li>
-          <div class="profile-pic">
-            <img src="@/assets/user/user3.jpg" class="pic" alt="profile-pic" />
-          </div>
-        </li>
-      </div>
+      <li class="nav-link nav-btn ">
+        <i class="fas fa-user-alt fa-lg"></i>
+      </li>
+      <li class="nav-link nav-btn">
+        <i class="far fa-comment-alt fa-lg"></i>
+      </li>
+      <li class="nav-link nav-btn">
+        <i class="fas fa-users fa-lg"></i>
+      </li>
+      <li class="nav-link nav-btn">
+        <i class="fas fa-address-book fa-lg"></i>
+      </li>
+      <li class="nav-link nav-btn">
+        <i class="fas fa-cog fa-lg"></i>
+      </li>
     </ul>
+    <div class="mode nav-btn" @click="setTheme()">
+      <i v-if="dark" class="fas fa-moon fa-lg"></i>
+      <i v-else class="fas fa-sun fa-lg"></i>
+    </div>
+    <div class="profile">
+      <div class="profile-pic">
+        <img src="@/assets/user/user3.jpg" class="pic" alt="profile-pic" />
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -45,41 +35,44 @@ export default {
   name: "NavBar",
   data() {
     return {
-      dark: true
+      dark: true,
     };
   },
   methods: {
     setTheme() {
       this.dark = !this.dark;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-.logo {
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
+<style lang="scss">
 .nav-bar {
   width: 5rem;
-}
-.nav-links {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.nav-link {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 10px;
-}
-.profile-pic {
-  padding-top: 80px;
+  padding-bottom: 10px;
+  .nav-btn {
+    &:hover {
+      border: 1px solid red;
+      color: #fff;
+    }
+  }
+  .logo {
+  }
+
+  .nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .nav-link {
+      padding: 20px;
+    }
+  }
 }
 
 .pic {
