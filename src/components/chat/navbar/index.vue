@@ -1,8 +1,10 @@
 <template>
-  <nav class="nav-bar light">
-    <div class="logo"><img class="pic" src="@/assets/logo.svg" alt /></div>
+  <nav :class="nav-bar {light: dark }">
+    <div class="logo">
+      <img class="pic" src="@/assets/logo.svg" alt />
+    </div>
     <ul class="nav">
-      <li class="nav-link nav-btn ">
+      <li class="nav-link nav-btn">
         <i class="fas fa-user-alt fa-lg"></i>
       </li>
       <li class="nav-link nav-btn">
@@ -35,14 +37,14 @@ export default {
   name: "NavBar",
   data() {
     return {
-      dark: true,
+      dark: true
     };
   },
   methods: {
     setTheme() {
       this.dark = !this.dark;
-    },
-  },
+    }
+  }
 };
 </script>
 
